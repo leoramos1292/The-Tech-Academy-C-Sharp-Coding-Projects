@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Leo's Car Insurance</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+
+    <div style="overflow: hidden;
+        background-color: lightblue;
+        position: fixed;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        width: 100%;
+        top: 0;
+        z-index: 1;
+        text-align: center;
+        font: bolder;
+    ">
+        <h4>LEO'S CAR INSURANCE</h4>
+    </div>
+
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&nbsp; &copy; @DateTime.Now.Year - Leo's Car Insurance</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
