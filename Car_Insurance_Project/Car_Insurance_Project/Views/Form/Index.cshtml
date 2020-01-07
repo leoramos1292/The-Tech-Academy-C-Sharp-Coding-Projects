@@ -9,21 +9,79 @@
                 <h5 class="m-0">Please Fill Out The Form Below</h5>
             </div>
             <div class="card-body">
-                <div class="no-gutters">
-                    <div class="form-group col-md-12">
-                        <input name="FirstName" type="text" class="form-control" placeholder="First Name" />
-                    </div>
-                    <div class="form-group col-md-12">
-                        <input name="LastName" type="text" class="form-control" placeholder="Last Name" />
-                    </div>
-                    <div class="form-group col-md-12">
-                        <input name="Age" type="number" class="form-control" placeholder="Age" />
-                    </div>
-                    <div class="form-group col-md-12">
-                        <input name="EmailAddress" type="email" class="form-control" placeholder="Email Address" />
-                    </div>
-                    <button type="submit" class="btn btn-block btn-info">Next</button>
+                @using (Html.BeginForm("Apply", "Home", FormMethod.Post))
+                {
+            <div class="no-gutters">
+                <div class="form-group col-md-12">
+                    <input name="FirstName" type="text" class="form-control" placeholder="First Name" />
                 </div>
+                <div class="form-group col-md-12">
+                    <input name="LastName" type="text" class="form-control" placeholder="Last Name" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="Age" type="number" class="form-control" placeholder="Age" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="EmailAddress" type="email" class="form-control" placeholder="Email Address" />
+                </div>
+                <div class="form-group col-md-12">
+                    <input name="Car Year" type="number" class="form-control" placeholder="Car Year" />
+                </div>
+                <div class="form-group col-md-12">
+                    <select class="form-control">
+                        <option disabled selected>Make</option>
+                        <option>Porsche</option>
+                        <option>BMW</option>
+                        <option>Dodge</option>
+                        <option>Subaru</option>
+                        <option>Honda</option>
+                        <option>Toyota</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <select class="form-control">
+                        <option disabled selected>Model</option>
+                        <option>911 Carrera</option>
+                        <option>Taycan</option>
+                        <option>i8</option>
+                        <option>Series 2</option>
+                        <option>Challenger</option>
+                        <option>Charger</option>
+                        <option>WRX</option>
+                        <option>Crosstrek</option>
+                        <option>Accord</option>
+                        <option>Civic</option>
+                        <option>Camry</option>
+                        <option>Corolla</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <p>Have you ever had any DUI's?</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="" id="checkBox">
+                        <label class="form-check-label" for="checkBox">
+                            Yes (leave unchecked if not)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <p>How many speeding tickets do you have, if any?</p>
+                    <input name="tickets" type="number" class="form-control" placeholder="Tickets" />
+                </div>
+                <div class="form-group col-md-12">
+                    <p>Please select the kind of Insurance you are looking for</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Full Coverage">
+                        <label class="form-check-label" for="inlineRadio1">Full Coverage</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Liability">
+                        <label class="form-check-label" for="inlineRadio2">Liability</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-block btn-info">Next</button>
+            </div>
+                }
             </div>
         </div>
     </div>

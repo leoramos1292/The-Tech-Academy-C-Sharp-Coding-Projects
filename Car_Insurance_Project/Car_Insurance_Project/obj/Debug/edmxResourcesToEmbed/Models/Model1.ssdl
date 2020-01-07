@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Car_InsuranceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Applications">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Car_Year" Type="int" Nullable="false" />
+    <Property Name="Make" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dui" Type="bit" />
+    <Property Name="Tickets" Type="int" Nullable="false" />
+    <Property Name="Full_Coverage" Type="bit" />
+    <Property Name="Liability" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="Car_InsuranceModelStoreContainer">
+    <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
