@@ -9,15 +9,15 @@
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Age" Type="Int32" Nullable="false" />
     <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Car_Year" Type="Int32" />
+    <Property Name="Car_Year" Type="Int32" Nullable="false" />
     <Property Name="Make" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Dui" Type="Boolean" />
+    <Property Name="Dui" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Tickets" Type="Int32" Nullable="false" />
-    <Property Name="Full_Coverage" Type="Boolean" />
-    <Property Name="Liability" Type="Boolean" />
+    <Property Name="Coverage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quote" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
-  <EntityContainer Name="Car_InsuranceEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Car_InsuranceEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Applications" EntityType="Self.Application" />
   </EntityContainer>
 </Schema>

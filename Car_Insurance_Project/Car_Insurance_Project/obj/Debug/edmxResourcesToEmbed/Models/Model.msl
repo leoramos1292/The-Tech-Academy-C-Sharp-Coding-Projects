@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Car_InsuranceModelStoreContainer" CdmEntityContainer="Car_InsuranceEntities1">
+  <EntityContainerMapping StorageEntityContainer="Car_InsuranceModelStoreContainer" CdmEntityContainer="Car_InsuranceEntities">
     <EntitySetMapping Name="Applications">
       <EntityTypeMapping TypeName="Car_InsuranceModel.Application">
         <MappingFragment StoreEntitySet="Applications">
@@ -14,8 +14,8 @@
           <ScalarProperty Name="Model" ColumnName="Model" />
           <ScalarProperty Name="Dui" ColumnName="Dui" />
           <ScalarProperty Name="Tickets" ColumnName="Tickets" />
-          <ScalarProperty Name="Full_Coverage" ColumnName="Full_Coverage" />
-          <ScalarProperty Name="Liability" ColumnName="Liability" />
+          <ScalarProperty Name="Coverage" ColumnName="Coverage" />
+          <ScalarProperty Name="Quote" ColumnName="Quote" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

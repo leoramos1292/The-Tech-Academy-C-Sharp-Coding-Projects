@@ -17,10 +17,10 @@
           <Property Name="Car_Year" Type="int" Nullable="false" />
           <Property Name="Make" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Dui" Type="bit" />
+          <Property Name="Dui" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Tickets" Type="int" Nullable="false" />
-          <Property Name="Full_Coverage" Type="bit" />
-          <Property Name="Liability" Type="bit" />
+          <Property Name="Coverage" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Quote" Type="money" />
         </EntityType>
         <EntityContainer Name="Car_InsuranceModelStoreContainer">
           <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
@@ -42,10 +42,10 @@
           <Property Name="Car_Year" Type="Int32" Nullable="false" />
           <Property Name="Make" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Dui" Type="Boolean" />
+          <Property Name="Dui" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Tickets" Type="Int32" Nullable="false" />
-          <Property Name="Full_Coverage" Type="Boolean" />
-          <Property Name="Liability" Type="Boolean" />
+          <Property Name="Coverage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quote" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <EntityContainer Name="Car_InsuranceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Applications" EntityType="Self.Application" />
@@ -69,8 +69,8 @@
                 <ScalarProperty Name="Model" ColumnName="Model" />
                 <ScalarProperty Name="Dui" ColumnName="Dui" />
                 <ScalarProperty Name="Tickets" ColumnName="Tickets" />
-                <ScalarProperty Name="Full_Coverage" ColumnName="Full_Coverage" />
-                <ScalarProperty Name="Liability" ColumnName="Liability" />
+                <ScalarProperty Name="Coverage" ColumnName="Coverage" />
+                <ScalarProperty Name="Quote" ColumnName="Quote" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

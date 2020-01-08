@@ -9,13 +9,13 @@
     <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Age" Type="int" Nullable="false" />
     <Property Name="EmailAddress" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Car_Year" Type="int" />
+    <Property Name="Car_Year" Type="int" Nullable="false" />
     <Property Name="Make" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Dui" Type="bit" />
+    <Property Name="Dui" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Tickets" Type="int" Nullable="false" />
-    <Property Name="Full_Coverage" Type="bit" />
-    <Property Name="Liability" Type="bit" />
+    <Property Name="Coverage" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quote" Type="money" />
   </EntityType>
   <EntityContainer Name="Car_InsuranceModelStoreContainer">
     <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />

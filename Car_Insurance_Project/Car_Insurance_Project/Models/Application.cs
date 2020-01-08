@@ -22,9 +22,9 @@ namespace Car_Insurance_Project.Models
         public int Car_Year { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
-        public Nullable<bool> Dui { get; set; }
+        public string Dui { get; set; }
         public int Tickets { get; set; }
-        public Nullable<bool> Full_Coverage { get; set; }
-        public Nullable<bool> Liability { get; set; }
+        public string Coverage { get; set; }
+        public Nullable<decimal> Quote { get; set; }
     }
 }
