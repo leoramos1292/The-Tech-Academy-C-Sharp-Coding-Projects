@@ -4,101 +4,28 @@
     ViewBag.Title = "Quote";
 }
 
-<h2>Quote</h2>
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">Quote</h5>
+        </div>
 
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            First Name
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            Last Name
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Age)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Age)
-        </dd>
-
-        <dt>
-            Email Address
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmailAddress)
-        </dd>
-
-        <dt>
-            Car Year
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Car_Year)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Make)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Make)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Model)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Model)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dui)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dui)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tickets)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tickets)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Coverage)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Coverage)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Quote)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Quote)
-        </dd>
-
-    </dl>
+        <div class="card-body">
+            <div class="no-gutters">
+                <dl class="dl-horizontal">
+                    <dd>
+                       <p>Dear, @Html.DisplayFor(model => model.FirstName)<p>
+                        <p>Thank you for applying for Leo's Car insurance!</p>
+                        <p>The @Html.DisplayFor(model => model.Car_Year) @Html.DisplayFor(model => model.Make) @Html.DisplayFor(model => model.Model) is a nice car!</p>
+                        <p>With the information you have given us today your monthly car insurance payment is: $@Html.DisplayFor(model => model.Quote)</p>
+                        <p>Thank you for choosing Leo's Car Insurance! Tell your friends.</p>
+                        <p>Best, Leo</p>
+                    </dd>
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Click here for Admin", "Admin")
+            </p>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>

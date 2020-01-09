@@ -15,7 +15,7 @@ namespace Car_Insurance_Project.Controllers
         private Car_InsuranceEntities db = new Car_InsuranceEntities();
 
         // GET: Application
-        public ActionResult Index()
+        public ActionResult Admin()
         {
             return View(db.Applications.ToList());
         }
@@ -51,8 +51,8 @@ namespace Car_Insurance_Project.Controllers
             if (ModelState.IsValid)
             {
                 db.Applications.Add(application);
-                db.SaveChanges();
-                return RedirectToAction("Create");
+                db.SaveChanges();                
+                return RedirectToAction("Admin");
             }
 
             return View(application);
@@ -84,7 +84,7 @@ namespace Car_Insurance_Project.Controllers
             {
                 db.Entry(application).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Admin");
             }
             return View(application);
         }
@@ -112,7 +112,7 @@ namespace Car_Insurance_Project.Controllers
             Application application = db.Applications.Find(id);
             db.Applications.Remove(application);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Admin");
         }
 
         protected override void Dispose(bool disposing)
@@ -134,7 +134,7 @@ namespace Car_Insurance_Project.Controllers
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
 
-                var totalPrice = 50;
+                decimal totalPrice = 50;
                 Application application = db.Applications.Find(id);
                 //age
                 if (application.Age < 18)
@@ -169,14 +169,26 @@ namespace Car_Insurance_Project.Controllers
                 }
                 //end make/model
 
-                //violations
-                var tickets = application.Tickets * 10;
+                //violations and percentages
+                decimal tickets = application.Tickets * 10;
                 totalPrice += tickets;
 
-                if (application.Dui == "Yes" && application.Coverage == "Full Cover")
+                if (application.Dui == "Yes" && application.Coverage == "Full Coverage")
                 {
-                    var percentages = totalPrice / .75 * 100;
-                    Convert.ToDouble(totalPrice);
+                    decimal percentages = totalPrice * .75m;
+                    totalPrice += percentages;
+                }
+
+                if (application.Dui == "Yes" && application.Coverage == "Liability")
+                {
+                    decimal percentages = totalPrice * .25m;
+                    totalPrice += percentages;
+                }
+
+                if (application.Dui == "No" && application.Coverage == "Full Coverage")
+                {
+                    decimal percentages = totalPrice * .50m;
+                    totalPrice += percentages;
                 }
 
                 application.Quote = totalPrice;
