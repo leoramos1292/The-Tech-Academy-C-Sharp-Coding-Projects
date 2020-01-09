@@ -42,14 +42,14 @@ namespace Car_Insurance_Project.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Age,EmailAddress,Car_Year,Make,Model,Dui,Tickets,Coverage,Quote")] Application application, int? id)
         {
-            using (Car_InsuranceEntities db = new Car_InsuranceEntities())
             if (ModelState.IsValid)
             {
                 db.Applications.Add(application);
                 db.SaveChanges();
-                db.Applications.Find(id);
                 return RedirectToAction("Admin");
             }
+
+            Quote(id);
 
             return View(application);
         }
