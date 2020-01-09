@@ -52,7 +52,7 @@ namespace Car_Insurance_Project.Controllers
             {
                 db.Applications.Add(application);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(application);
@@ -123,5 +123,67 @@ namespace Car_Insurance_Project.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpGet]
+        public ActionResult Quote(int? id)
+        {
+            using (Car_InsuranceEntities db = new Car_InsuranceEntities())
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+
+                var totalPrice = 50;
+                Application application = db.Applications.Find(id);
+                //age
+                if (application.Age < 18)
+                {
+                    totalPrice += 100;
+                }
+                if (application.Age < 25 && application.Age > 18)
+                {
+                    totalPrice += 25;
+                }
+                if (application.Age > 100)
+                {
+                    totalPrice += 25;
+                }
+                //age end
+
+                //year
+                if (application.Car_Year < 2000 || application.Car_Year > 2015)
+                {
+                    totalPrice += 25;
+                }
+                //end year
+
+                //make/model
+                if (application.Make == "Porsche")
+                {
+                    totalPrice += 25;
+                }
+                if (application.Model == "911 Carrera")
+                {
+                    totalPrice += 25;
+                }
+                //end make/model
+
+                //violations
+                var tickets = application.Tickets * 10;
+                totalPrice += tickets;
+
+                if (application.Dui == "Yes" && application.Coverage == "Full Cover")
+                {
+                    var percentages = totalPrice / .75 * 100;
+                    Convert.ToDouble(totalPrice);
+                }
+
+                application.Quote = totalPrice;
+                db.SaveChanges();
+                return View(application);
+            }
+        }
+
     }
 }

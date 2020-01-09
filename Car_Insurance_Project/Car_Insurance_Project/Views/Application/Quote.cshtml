@@ -1,10 +1,10 @@
 ﻿@model Car_Insurance_Project.Models.Application
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Quote";
 }
 
-<h2>Details</h2>
+<h2>Quote</h2>
 
 <div>
     <hr />
@@ -94,12 +94,11 @@
         </dt>
 
         <dd>
-            $@Html.DisplayFor(model => model.Quote)
+            @Html.DisplayFor(model => model.Quote)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
