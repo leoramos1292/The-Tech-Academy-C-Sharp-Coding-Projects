@@ -14,13 +14,11 @@ namespace Car_Insurance_Project.Controllers
     {
         private Car_InsuranceEntities db = new Car_InsuranceEntities();
 
-        // GET: Application
         public ActionResult Admin()
         {
             return View(db.Applications.ToList());
         }
 
-        // GET: Application/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,30 +33,27 @@ namespace Car_Insurance_Project.Controllers
             return View(application);
         }
 
-        // GET: Application/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Application/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Age,EmailAddress,Car_Year,Make,Model,Dui,Tickets,Coverage,Quote")] Application application)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Age,EmailAddress,Car_Year,Make,Model,Dui,Tickets,Coverage,Quote")] Application application, int? id)
         {
+            using (Car_InsuranceEntities db = new Car_InsuranceEntities())
             if (ModelState.IsValid)
             {
                 db.Applications.Add(application);
-                db.SaveChanges();                
+                db.SaveChanges();
+                db.Applications.Find(id);
                 return RedirectToAction("Admin");
             }
 
             return View(application);
         }
 
-        // GET: Application/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,9 +68,6 @@ namespace Car_Insurance_Project.Controllers
             return View(application);
         }
 
-        // POST: Application/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Age,EmailAddress,Car_Year,Make,Model,Dui,Tickets,Coverage,Quote")] Application application)
@@ -89,7 +81,6 @@ namespace Car_Insurance_Project.Controllers
             return View(application);
         }
 
-        // GET: Application/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +95,6 @@ namespace Car_Insurance_Project.Controllers
             return View(application);
         }
 
-        // POST: Application/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
