@@ -14,20 +14,13 @@ namespace Car_Insurance_Project.Controllers
     {
         private Car_InsuranceEntities db = new Car_InsuranceEntities();
 
+        //This is the main view where all data form the database table is visible
         public ActionResult Index()
         {
             return View(db.Applications.ToList());
         }
-        public ActionResult Admin()
-        {
-            return View(db.Applications.ToList());
-        }
 
-        public ActionResult Confirmation()
-        {
-            return View(db.Applications.ToList());
-        }
-
+        //This allows you to pick one row from the database and edit view the values seperately from the rest
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -42,6 +35,7 @@ namespace Car_Insurance_Project.Controllers
             return View(application);
         }
 
+        //This method allows an Applicant to apply (crerates a new database object)
         public ActionResult Create()
         {
             return View();
@@ -60,33 +54,7 @@ namespace Car_Insurance_Project.Controllers
             return View(application);
         }
 
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Application application = db.Applications.Find(id);
-            if (application == null)
-            {
-                return HttpNotFound();
-            }
-            return View(application);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Age,EmailAddress,Car_Year,Make,Model,Dui,Tickets,Coverage,Quote")] Application application)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(application).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Admin");
-            }
-            return View(application);
-        }
-
+        //This method allows you to delete entire rows from the database
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,7 +76,7 @@ namespace Car_Insurance_Project.Controllers
             Application application = db.Applications.Find(id);
             db.Applications.Remove(application);
             db.SaveChanges();
-            return RedirectToAction("Admin");
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
@@ -120,6 +88,48 @@ namespace Car_Insurance_Project.Controllers
             base.Dispose(disposing);
         }
 
+        //This method sets up a view with specific information from the Database
+        public ActionResult Admin()
+        {
+            return View(db.Applications.ToList());
+        }
+
+        //This method takes the latest entry in the database and allows you to generate a quote. 
+        //It's there for the applicant to confirm the information they entered and allows them to edit it if necessary. 
+        public ActionResult Confirmation()
+        {
+            return View(db.Applications.ToList());
+        }
+
+        //This allows the applicant to edit the values they entered before confirming them
+        public ActionResult ConfirmEdit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Application application = db.Applications.Find(id);
+            if (application == null)
+            {
+                return HttpNotFound();
+            }
+            return View(application);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ConfirmEdit([Bind(Include = "Id,FirstName,LastName,Age,EmailAddress,Car_Year,Make,Model,Dui,Tickets,Coverage,Quote")] Application application)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(application).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Confirmation");
+            }
+            return View(application);
+        }
+
+        //this method generates a quote for the applicant depending on what answers were given
         [HttpGet]
         public ActionResult Quote(int? id)
         {

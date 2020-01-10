@@ -313,11 +313,11 @@
     <Content Include="Views\Application\Create.cshtml" />
     <Content Include="Views\Application\Delete.cshtml" />
     <Content Include="Views\Application\Details.cshtml" />
-    <Content Include="Views\Application\Edit.cshtml" />
     <Content Include="Views\Application\Admin.cshtml" />
     <Content Include="Views\Application\Quote.cshtml" />
     <Content Include="Views\Application\Confirmation.cshtml" />
     <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Application\ConfirmEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

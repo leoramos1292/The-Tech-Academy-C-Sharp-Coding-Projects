@@ -17,14 +17,14 @@
                        <p>Dear @Html.DisplayFor(model => model.FirstName),<p>
                         <p>Thank you for applying for Leo's Car insurance!</p>
                         <p>The @Html.DisplayFor(model => model.Car_Year) @Html.DisplayFor(model => model.Make) @Html.DisplayFor(model => model.Model) is a nice car!</p>
-                        <p>With the information you have given us today your monthly car insurance payment is: $@Html.DisplayFor(model => model.Quote)</p>
-                        <p>Thank you for choosing Leo's Car Insurance! Tell your friends.</p>
+                        <p>With the information you have given us today your monthly car insurance payment is: $@Html.DisplayFor(model => model.Quote) a month.</p>
+                        <p>Thank you for choosing Leo's Car Insurance. Tell your friends!</p>
                         <p>Best, Leo Ramos</p>
                     </dd>
                 </dl>
             </div>
             <p>
-                @Html.ActionLink("Click here for Admin", "Admin")
+                @Html.ActionLink("Exit to Admin View", "Admin")
             </p>
         </div>
     </div>

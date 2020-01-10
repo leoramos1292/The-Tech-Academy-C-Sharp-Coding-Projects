@@ -75,7 +75,9 @@
         @Html.DisplayFor(model => item.Coverage)
     </td>
     <td>
-        @Html.ActionLink("Generate Quote", "Quote", new { id = item.Id })
+        @Html.ActionLink("Generate Quote", "Quote", new { id = item.Id }) |
+        @Html.ActionLink("Edit", "ConfirmEdit", new { id = item.Id })
+
     </td>
 </tr>
     }
