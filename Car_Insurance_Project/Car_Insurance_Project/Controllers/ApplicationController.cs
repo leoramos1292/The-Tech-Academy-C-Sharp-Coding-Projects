@@ -147,7 +147,7 @@ namespace Car_Insurance_Project.Controllers
                 {
                     totalPrice += 100;
                 }
-                if (application.Age < 25 && application.Age > 18)
+                if (application.Age < 25 && application.Age > 17)
                 {
                     totalPrice += 25;
                 }
