@@ -68,7 +68,6 @@
                           new SelectListItem {Text = "Toyota"},
                           new SelectListItem {Text = "Mitsubishi"},
                       }, "Select Make")
-            @*@Html.EditorFor(model => model.Make, new { htmlAttributes = new { @class = "form-control" } })*@
             @Html.ValidationMessageFor(model => model.Make, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -134,5 +133,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to Admin", "Admin")
+    @Html.ActionLink("Back to Index", "Index")
 </div>

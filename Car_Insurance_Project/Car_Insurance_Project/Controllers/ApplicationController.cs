@@ -14,7 +14,16 @@ namespace Car_Insurance_Project.Controllers
     {
         private Car_InsuranceEntities db = new Car_InsuranceEntities();
 
+        public ActionResult Index()
+        {
+            return View(db.Applications.ToList());
+        }
         public ActionResult Admin()
+        {
+            return View(db.Applications.ToList());
+        }
+
+        public ActionResult Confirmation()
         {
             return View(db.Applications.ToList());
         }
@@ -46,11 +55,8 @@ namespace Car_Insurance_Project.Controllers
             {
                 db.Applications.Add(application);
                 db.SaveChanges();
-                return RedirectToAction("Admin");
+                return RedirectToAction("Confirmation");
             }
-
-            Quote(id);
-
             return View(application);
         }
 

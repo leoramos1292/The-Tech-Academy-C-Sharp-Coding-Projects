@@ -132,7 +132,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
-    <Compile Include="Controllers\FormController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -317,6 +316,8 @@
     <Content Include="Views\Application\Edit.cshtml" />
     <Content Include="Views\Application\Admin.cshtml" />
     <Content Include="Views\Application\Quote.cshtml" />
+    <Content Include="Views\Application\Confirmation.cshtml" />
+    <Content Include="Views\Application\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
