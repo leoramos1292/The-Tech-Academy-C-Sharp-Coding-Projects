@@ -1,0 +1,11 @@
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\bin\Debug\LeoResearchProject.exe.config
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\bin\Debug\LeoResearchProject.exe
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\bin\Debug\LeoResearchProject.pdb
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\bin\Debug\EntityFramework.dll
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\bin\Debug\EntityFramework.xml
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\obj\Debug\LeoResearchProject.csprojAssemblyReference.cache
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\obj\Debug\LeoResearchProject.csproj.CopyComplete
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\obj\Debug\LeoResearchProject.exe
+C:\Users\lazlo\Desktop\GitHub\The-Tech-Academy-C-Sharp-Coding-Projects\LeoResearchProject\LeoResearchProject\obj\Debug\LeoResearchProject.pdb
